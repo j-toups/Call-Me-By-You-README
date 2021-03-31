@@ -32,11 +32,18 @@ function readme() {
             type:"input",
             name: "tests",
             message:"Insert any tests here.Leave blank if none."
-        }
+        },
 
     ])
-};
-
+    .then ((answer) => {
+        console.log(answer.title);
+        console.log(answer.description);
+        console.log(answer.install);
+        console.log(answer.usage);
+        console.log(answer.contribution);
+        console.log(answer.tests);
+    });
+}
 const write = (data) => {
     const html=`
     <!DOCTYPE html>
@@ -58,9 +65,8 @@ const write = (data) => {
     </body>     
     </html> 
     `; 
-    
     fs.writeFile('index.html', html, function (err) {
         if (err) return console.log(err);
         console.log('README created!');
-    });
+    })
 }
