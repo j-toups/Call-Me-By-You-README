@@ -1,0 +1,22 @@
+{
+  "name": "call-me-by-your-readme",
+  "version": "1.0.0",
+  "description": "readme project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-toups/Call-Me-By-Your-README.git"
+  },
+  "author": "Joseph T",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j-toups/Call-Me-By-Your-README/issues"
+  },
+  "homepage": "https://github.com/j-toups/Call-Me-By-Your-README#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
