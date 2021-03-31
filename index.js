@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 var fs = require("fs");
 
-function test() {
+function readme() {
     inquirer.prompt([
         {
             type: "input",
@@ -31,36 +31,36 @@ function test() {
         {
             type:"input",
             name: "tests",
-            message:"Insert any tests here. Leave blank if none."
+            message:"Insert any tests here.Leave blank if none."
         }
 
     ])
 };
-test()
-        // const readme = (data) => {
-        //     const html=`
-        //     <!DOCTYPE html>
-        //     <html lang="en">
-        //     <head>
-        //         <meta charset="UTF-8">
-        //         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        //         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        //         <title>New Profile</title>
-        //     </head>
-        //     <body>
-        //         <h1 class = "readme">${data.title}</h1>
-        //         <div class ="readme">${data.description}</div>
-        //         <div class="readme">${data.instal}</div>
-        //         <div class="readme">${data.usage}</div>
-        //         <div class="readme">${data.contribution}</div>
-        //         <div class="readme">${data.tests}</div>
-        //     <script type="text/javascript" src="index.js"></script>
-        //     </body>     
-        //     </html> 
-        //     `; 
-            
-        //     fs.writeFile('index.html', html, function (err) {
-        //         if (err) return console.log(err);
-        //         console.log('README created!');
-        //     });
-        // }
+
+const readme = (data) => {
+    const html=`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>New Profile</title>
+    </head>
+    <body>
+        <h1 class = "readme">${data.title}</h1>
+        <div class ="readme">${data.description}</div>
+        <div class="readme">${data.instal}</div>
+        <div class="readme">${data.usage}</div>
+        <div class="readme">${data.contribution}</div>
+        <div class="readme">${data.tests}</div>
+    <script type="text/javascript" src="index.js"></script>
+    </body>     
+    </html> 
+    `; 
+    
+    fs.writeFile('index.html', html, function (err) {
+        if (err) return console.log(err);
+        console.log('README created!');
+    });
+}
