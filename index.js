@@ -1,4 +1,4 @@
-const inquirer = require("inquirer");
+var inquirer = require("inquirer");
 var fs = require("fs");
 
 function readme() {
@@ -15,7 +15,7 @@ function readme() {
         },
         {
             type:"input",
-            name: "instal",
+            name: "install",
             message:"Describe installation instructions."
         },
         {
@@ -37,7 +37,7 @@ function readme() {
     ])
 };
 
-const readme = (data) => {
+const write = (data) => {
     const html=`
     <!DOCTYPE html>
     <html lang="en">
@@ -50,7 +50,7 @@ const readme = (data) => {
     <body>
         <h1 class = "readme">${data.title}</h1>
         <div class ="readme">${data.description}</div>
-        <div class="readme">${data.instal}</div>
+        <div class="readme">${data.install}</div>
         <div class="readme">${data.usage}</div>
         <div class="readme">${data.contribution}</div>
         <div class="readme">${data.tests}</div>
