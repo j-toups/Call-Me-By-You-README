@@ -1,8 +1,8 @@
-var inquirer = require("inquirer");
-var fs = require("fs");
+const inquirer = require("inquirer");
+const fs = require("fs");
+const generateMarkdown = require("./generateMarkdown");
 
-function readme() {
-    inquirer.prompt([
+const questions = [
         {
             type: "input",
             name: "title",
@@ -33,40 +33,18 @@ function readme() {
             name: "tests",
             message:"Insert any tests here.Leave blank if none."
         },
-
-    ])
-    .then ((answer) => {
-        console.log(answer.title);
-        console.log(answer.description);
-        console.log(answer.install);
-        console.log(answer.usage);
-        console.log(answer.contribution);
-        console.log(answer.tests);
-    });
-}
-const write = (data) => {
-    const html=`
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>New Profile</title>
-    </head>
-    <body>
-        <h1 class = "readme">${data.title}</h1>
-        <div class ="readme">${data.description}</div>
-        <div class="readme">${data.install}</div>
-        <div class="readme">${data.usage}</div>
-        <div class="readme">${data.contribution}</div>
-        <div class="readme">${data.tests}</div>
-    <script type="text/javascript" src="index.js"></script>
-    </body>     
-    </html> 
-    `; 
-    fs.writeFile('index.html', html, function (err) {
-        if (err) return console.log(err);
-        console.log('README created!');
+ ];
+ 
+function writeFile() {
+    fs.writeFile('README.md', questions, function (err) {
+        if (err) return console.log(err)
     })
-}
+};
+
+function init() {
+    inquirer.prompt(questions).then(answer => {
+        generateMarkdown(answer)
+    })
+};
+
+init();
