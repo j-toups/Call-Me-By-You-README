@@ -1,8 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./generateMarkdown");
-var path = require('path');
-var filename = path.dirname('/generateMarkdown.js');
 
 const questions = [
         {
@@ -27,7 +25,7 @@ const questions = [
         }, 
         {
             type:"input",
-            name: "contribution",
+            name: "contributions",
             message:"What coontributions would you like to credit? Leave blank if none."
         },
         {
@@ -38,7 +36,7 @@ const questions = [
  ];
 function init() {
     inquirer.prompt(questions).then(answer => {
-        fs.writeFile(path.join(__dirname, filename), generateMarkdown(answer), function (err) {
+        fs.writeFile("README.md", generateMarkdown(answer), function (err) {
             if (err) return console.log(err)
         })
     })
