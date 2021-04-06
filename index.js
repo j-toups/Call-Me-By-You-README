@@ -1,7 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./generateMarkdown");
-
+var path = require('path')
+var filename = path.dirname('/generateMarkdown.js')
 const questions = [
         {
             type: "input",
@@ -31,12 +32,12 @@ const questions = [
         {
             type:"input",
             name: "tests",
-            message:"Insert any tests here.Leave blank if none."
+            message:"Insert any tests here. Leave blank if none."
         },
  ];
  
 function writeFile() {
-    fs.writeFile('README.md', questions, function (err) {
+    fs.writeFile(path.join(__dirname, filename), data, function (err) {
         if (err) return console.log(err)
     })
 };
