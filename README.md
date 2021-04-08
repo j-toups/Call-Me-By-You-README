@@ -3,7 +3,7 @@
   
   ## License 
   ![License](https://img.shields.io/badge/License-MIT-blue.svg)
-  ![https://opensource.org/licenses/MIT]
+  https://opensource.org/licenses/MIT]
 
   ## Description 
   f
