@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./generateMarkdown");
 
+//Generates variables for input in node.js
 const questions = [
         {
             type: "input",
@@ -24,9 +25,15 @@ const questions = [
             message:"What usage information would you like to include? Leave blank if none."
         }, 
         {
+            type: "list",
+            name: "license",
+            message: "Which license do you use?",
+            choices: ["MIT", "IBM", "Mozilla", "Eclipse"],
+        },
+        {
             type:"input",
             name: "contributions",
-            message:"What coontributions would you like to credit? Leave blank if none."
+            message:"What contributions would you like to credit? Leave blank if none."
         },
         {
             type:"input",
@@ -34,12 +41,13 @@ const questions = [
             message:"Insert any tests here. Leave blank if none."
         },
  ];
-function init() {
+ //Prompts user for input and writes input to README.md
+ function init() {
     inquirer.prompt(questions).then(answer => {
         fs.writeFile("README.md", generateMarkdown(answer), function (err) {
             if (err) return console.log(err)
         })
     })
 };
-
+//Calls Function
 init();
