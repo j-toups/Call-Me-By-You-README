@@ -4,9 +4,9 @@ function generateMarkdown(data) {
   return `
   # ${data.title}
   
-  ##License 
+  ## License 
   ![License](https://img.shields.io/badge/License-${data.license}-blue.svg)
-  ![Link](https://opensource.org/licenses/${data.license})
+  ![Link to License](https://opensource.org/licenses/${data.license})
 
   ## Description 
   ${data.description}

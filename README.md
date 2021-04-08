@@ -1,9 +1,9 @@
 
   # ReadMe Generator
   
-  ##License 
+  ## License 
   ![License](https://img.shields.io/badge/License-MIT-blue.svg)
-  ![Link](https://opensource.org/licenses/MIT)
+  ![Link to License](https://opensource.org/licenses/MIT)
 
   ## Description 
   no
