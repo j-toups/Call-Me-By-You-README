@@ -5,7 +5,7 @@
   ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
   ## Description 
-  This is a node. js application taht allows a User to respond to prompts. The prompts will then be written to a README.md file. 
+  This is a node. js application that allows a User to respond to prompts. The prompts will then be written to a README.md file. 
 
   ![](test.gif)
 
