@@ -40,6 +40,11 @@ const questions = [
             name: "tests",
             message:"Insert any tests here. Leave blank if none."
         },
+        {
+            type:"input",
+            name: "questions",
+            message: "How can you be reached if users have questions?"
+        }
  ];
  //Prompts user for input and writes input to README.md
  function init() {
